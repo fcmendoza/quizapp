@@ -1,18 +1,23 @@
 (function($, window, document) {
-    console.log("hello");
-
     $(function() {
-        $("#button-next").click(next);
+        $.getJSON("http://quizsharp.s3-website-us-west-1.amazonaws.com/quiz_db.json", function(data) {
+            _helper.questions = data;
+            init();
+        });
+    });
+
+    function init() {
         $("#button-start").click(function() {
             $("div#instructions-container").hide();
-            next()
+            next();
         });
+        $("#button-next").click(next);
         $("#button-restart").click(function() {
             location.reload();
         });
         
         $("div#question-container").on('click', 'button', answer_chosen);
-    });
+    }
 
     function next() {
         if (_count < _max_questions_count && are_questions_available()) {
@@ -87,10 +92,10 @@
         return !(_questions_asked.length >= _helper.questions.length);
     }
 
+    var _helper = new helper();
     var _count = 0;
     var _max_questions_count = 10;
-    var _helper = new helper();
-    var _questions_asked=[];
+    var _questions_asked = [];
     var _correct_answer_id = 0;
     var _correct_answers_count = 0;
 
