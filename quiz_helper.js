@@ -1,97 +1,99 @@
 class helper {
-    questions = [
-        {
-            "id": 1,
-            "question": "Which one of the following is a fruit?",
-            "options": [
-                {"number": 1, "answer": "Carrot"},
-                {"number": 2, "answer": "Pizza"},
-                {"number": 3, "answer": "Apple"}
-            ],
-            "answer_number": 3
-        }, {
-            "id": 2,
-            "question": "What type of paradigm does the C# language follow?",
-            "options": [
-                {"number": 1, "answer": "Procedural Programming"},
-                {"number": 2, "answer": "Object Oriented Programming"},
-                {"number": 3, "answer": "Functional Programming"}
-            ],
-            "answer_number": 2
-        }, {
-            "id": 3,
-            "question": "Which one of the following is *not* a collection in C#?",
-            "options": [
-                {"number": 1, "answer": "IEnumerable"},
-                {"number": 2, "answer": "IList"},
-                {"number": 3, "answer": "IDisposable"}
-            ],
-            "answer_number": 3
-        }, {
-            "id": 4,
-            "question": "How many classes can a child class inherit from?",
-            "options": [
-                {"number": 1, "answer": "One"},
-                {"number": 2, "answer": "Two"},
-                {"number": 3, "answer": "There's no limit"}
-            ],
-            "answer_number": 1
-        }, {
-            "id": 5,
-            "question": "What is the base class in .NET from which all the classes are derived from?",
-            "options": [
-                {"number": 1, "answer": "System.String"},
-                {"number": 2, "answer": "System.Object"},
-                {"number": 3, "answer": "System.Class"}
-            ],
-            "answer_number": 2
-        }, {
-            "id": 6,
-            "question": "What of the following features is not part of C#?",
-            "options": [
-                {"number": 1, "answer": "Generics"},
-                {"number": 2, "answer": "Extension methods"},
-                {"number": 3, "answer": "Multiple Inheritance"}
-            ],
-            "answer_number": 3
-        }, {
-            "id": 7,
-            "question": "Who played Neo in The Matrix movie?",
-            "options": [
-                {"number": 1, "answer": "Keanu Reeves"},
-                {"number": 2, "answer": "Leonardo DiCaprio"},
-                {"number": 3, "answer": "Bruce Lee"}
-            ],
-            "answer_number": 1
-        }, {
-            "id": 8,
-            "question": "Name the seventh planet from the sun?",
-            "options": [
-                {"number": 1, "answer": "Mars"},
-                {"number": 2, "answer": "Uranus"},
-                {"number": 3, "answer": "Jupiter"}
-            ],
-            "answer_number": 2
-        }, {
-            "id": 9,
-            "question": "Name the world's largest ocean?",
-            "options": [
-                {"number": 1, "answer": "Pacific"},
-                {"number": 2, "answer": "Atlantic"},
-                {"number": 3, "answer": "Indian"}
-            ],
-            "answer_number": 1
-        }, {
-            "id": 10,
-            "question": "Which country is Prague in?",
-            "options": [
-                {"number": 1, "answer": "Russia"},
-                {"number": 2, "answer": "Germany"},
-                {"number": 3, "answer": "Czech Republic"}
-            ],
-            "answer_number": 3
-        }
-    ];
+    constructor() {
+        this.questions = [
+            {
+                "id": 1,
+                "question": "Which one of the following is a fruit?",
+                "options": [
+                    {"number": 1, "answer": "Carrot"},
+                    {"number": 2, "answer": "Pizza"},
+                    {"number": 3, "answer": "Apple"}
+                ],
+                "answer_number": 3
+            }, {
+                "id": 2,
+                "question": "What type of paradigm does the C# language follow?",
+                "options": [
+                    {"number": 1, "answer": "Procedural Programming"},
+                    {"number": 2, "answer": "Object Oriented Programming"},
+                    {"number": 3, "answer": "Functional Programming"}
+                ],
+                "answer_number": 2
+            }, {
+                "id": 3,
+                "question": "Which one of the following is *not* a collection in C#?",
+                "options": [
+                    {"number": 1, "answer": "IEnumerable"},
+                    {"number": 2, "answer": "IList"},
+                    {"number": 3, "answer": "IDisposable"}
+                ],
+                "answer_number": 3
+            }, {
+                "id": 4,
+                "question": "How many classes can a child class inherit from?",
+                "options": [
+                    {"number": 1, "answer": "One"},
+                    {"number": 2, "answer": "Two"},
+                    {"number": 3, "answer": "There's no limit"}
+                ],
+                "answer_number": 1
+            }, {
+                "id": 5,
+                "question": "What is the base class in .NET from which all the classes are derived from?",
+                "options": [
+                    {"number": 1, "answer": "System.String"},
+                    {"number": 2, "answer": "System.Object"},
+                    {"number": 3, "answer": "System.Class"}
+                ],
+                "answer_number": 2
+            }, {
+                "id": 6,
+                "question": "What of the following features is not part of C#?",
+                "options": [
+                    {"number": 1, "answer": "Generics"},
+                    {"number": 2, "answer": "Extension methods"},
+                    {"number": 3, "answer": "Multiple Inheritance"}
+                ],
+                "answer_number": 3
+            }, {
+                "id": 7,
+                "question": "Who played Neo in The Matrix movie?",
+                "options": [
+                    {"number": 1, "answer": "Keanu Reeves"},
+                    {"number": 2, "answer": "Leonardo DiCaprio"},
+                    {"number": 3, "answer": "Bruce Lee"}
+                ],
+                "answer_number": 1
+            }, {
+                "id": 8,
+                "question": "Name the seventh planet from the sun?",
+                "options": [
+                    {"number": 1, "answer": "Mars"},
+                    {"number": 2, "answer": "Uranus"},
+                    {"number": 3, "answer": "Jupiter"}
+                ],
+                "answer_number": 2
+            }, {
+                "id": 9,
+                "question": "Name the world's largest ocean?",
+                "options": [
+                    {"number": 1, "answer": "Pacific"},
+                    {"number": 2, "answer": "Atlantic"},
+                    {"number": 3, "answer": "Indian"}
+                ],
+                "answer_number": 1
+            }, {
+                "id": 10,
+                "question": "Which country is Prague in?",
+                "options": [
+                    {"number": 1, "answer": "Russia"},
+                    {"number": 2, "answer": "Germany"},
+                    {"number": 3, "answer": "Czech Republic"}
+                ],
+                "answer_number": 3
+            }
+        ];
+    }
 
     get_random_question() {
         var min = 0;
