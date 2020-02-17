@@ -10,7 +10,7 @@
         $("#button-restart").click(function() {
             location.reload();
         });
-
+        
         $("div#question-container").on('click', 'button', answer_chosen);
     });
 
@@ -21,7 +21,7 @@
             _count++;
             _correct_answer_id = q.answer_number;
         } else {
-            console.log("This is the end. Thank you for playing. Your score is: 100");
+            // end of the game
             display_summary();
         }
     }
@@ -34,9 +34,7 @@
         } else {
             me.addClass("btn-danger");
         }
-        $("#tally").show();
-        $("#tally").html(`Correct answers: ${_correct_answers_count} of ${_max_questions_count}.`);
-        $("#button-next").show();
+        update_running_tally();
     }
 
     // gets a question that has not been asked before (in the current "session")
@@ -57,10 +55,7 @@
     function display_question(q) {
         $("div#question-container").empty();
         $("#button-next").hide();
-        
-        var question_element = "<p id='" + q.id + "'>" + q.question + "</p>";
-        
-        $("div#question-container").append(question_element);
+        $("div#question-container").append(`<p>${q.question}</p>`);
 
         var options = [];
         $.each(q.options, function(i, item) {
@@ -68,8 +63,9 @@
             options.push(btn);
         });
         
+        // show all answers as buttons.
         $("<ul/>", {
-            "class": "my-new-list",
+            "class": "answers",
             html: options
         }).appendTo("div#question-container");
     }
@@ -79,6 +75,12 @@
         $("#score").text(score);
         $("#summary").show();
         $("#button-next").hide();
+    }
+
+    function update_running_tally() {
+        $("#tally").show();
+        $("#tally").html(`Correct answers: ${_correct_answers_count} of ${_max_questions_count}.`);
+        $("#button-next").show();
     }
 
     function are_questions_available() {
