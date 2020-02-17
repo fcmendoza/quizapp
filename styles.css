@@ -1,0 +1,16 @@
+#button-next, #summary {
+    display: none;
+}
+
+#tally {
+    font-size: small;
+    font-style: italic;
+}
+
+.btn-danger {
+    background:red;
+}
+
+.btn-success {
+    background:green;
+}

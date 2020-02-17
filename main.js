@@ -3,16 +3,40 @@
 
     $(function() {
         $("#button-next").click(next);
+        $("#button-start").click(function() {
+            $("div#instructions-container").hide();
+            next()
+        });
+        $("#button-restart").click(function() {
+            location.reload();
+        });
+
+        $("div#question-container").on('click', 'button', answer_chosen);
     });
 
     function next() {
-        if (_count <= _max_questions_count && are_questions_available()) {
+        if (_count < _max_questions_count && are_questions_available()) {
             var q = get_question();
             display_question(q);
             _count++;
+            _correct_answer_id = q.answer_number;
         } else {
-            console.log("This is the end. Thank you for playing. Your score is: 100")
+            console.log("This is the end. Thank you for playing. Your score is: 100");
+            display_summary();
         }
+    }
+
+    function answer_chosen() {
+        var me = $(this);
+        if (me.attr("id") == _correct_answer_id) {
+            me.addClass("btn-success");
+            _correct_answers_count++;
+        } else {
+            me.addClass("btn-danger");
+        }
+        $("#tally").show();
+        $("#tally").html(`Correct answers: ${_correct_answers_count} of ${_max_questions_count}.`);
+        $("#button-next").show();
     }
 
     // gets a question that has not been asked before (in the current "session")
@@ -32,6 +56,7 @@
 
     function display_question(q) {
         $("div#question-container").empty();
+        $("#button-next").hide();
         
         var question_element = "<p id='" + q.id + "'>" + q.question + "</p>";
         
@@ -39,7 +64,8 @@
 
         var options = [];
         $.each(q.options, function(i, item) {
-            options.push("<li id='" + item.number + "'>" + item.answer + "</li>");
+            var btn = `<li><button id="${item.number}" type="button" class="btn btn-primary">${item.answer}</button></li>`;
+            options.push(btn);
         });
         
         $("<ul/>", {
@@ -48,13 +74,22 @@
         }).appendTo("div#question-container");
     }
 
+    function display_summary() {
+        var score = (_correct_answers_count/_max_questions_count)*100;
+        $("#score").text(score);
+        $("#summary").show();
+        $("#button-next").hide();
+    }
+
     function are_questions_available() {
         return !(_questions_asked.length >= _helper.questions.length);
     }
 
     var _count = 0;
-    var _max_questions_count = 50;
+    var _max_questions_count = 10;
     var _helper = new helper();
     var _questions_asked=[];
+    var _correct_answer_id = 0;
+    var _correct_answers_count = 0;
 
 })(window.jQuery, window, document);
