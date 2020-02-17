@@ -8,27 +8,32 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="quiz_helper.js"></script>
         <script src="main.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
     </head>
 <body>
 
-<h1>Welcome to Quiz Sharp</h1>
-<p id="tally">.</p>
-
-<div id="instructions-container">
-    <p>Click Start to begin</p>
-    <button id="button-start">Start</button>
-</div>
-
-<div id="question-container">
-</div>
-<button id="button-next">Next</button>
-
-<div id="summary">
-    <p>Your score is: <label id="score"></label>%. Thank you for playing!</p>
-    <button id="button-restart">Play again</button>
-</div>
+    <div class="container">
+        <h2>Welcome to Quiz Sharp</h2>
+        <p id="tally">.</p>
+        
+        <div id="instructions-container">
+            <p>Click Start to begin</p>
+            <button id="button-start" class="btn btn-outline-primary">Start</button>
+        </div>
+        
+        <div id="question-container">
+        </div>
+        <p></p>
+        <div>
+            <button id="button-next" class="btn btn-outline-primary">Next</button>
+        </div>
+        
+        <div id="summary">
+            <p>Your score is: <label id="score"></label>%. Thank you for playing!</p>
+            <button id="button-restart" class="btn btn-outline-primary">Play again</button>
+        </div>
+    </div>
 
 </body>
 </html>

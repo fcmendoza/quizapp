@@ -65,12 +65,12 @@
 
         var options = [];
         $.each(q.options, function(i, item) {
-            var btn = `<li><button id="${item.number}" type="button" class="btn btn-primary">${item.answer}</button></li>`;
+            var btn = `<button id="${item.number}" class="btn btn-primary btn-block">${item.answer}</button>`;
             options.push(btn);
         });
         
         // show all answers as buttons.
-        $("<ul/>", {
+        $("<div/>", {
             "class": "answers",
             html: options
         }).appendTo("#question-container");
