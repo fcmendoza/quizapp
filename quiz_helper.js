@@ -36,6 +36,31 @@ class helper {
                 {"number": 3, "answer": "There's no limit"}
             ],
             "answer_number": 1
+        }, {
+            "id": 5,
+            "question": "What is the base class in .NET from which all the classes are derived from?",
+            "options": [
+                {"number": 1, "answer": "System.String"},
+                {"number": 2, "answer": "System.Object"},
+                {"number": 3, "answer": "System.Class"}
+            ],
+            "answer_number": 2
+        }, {
+            "id": 6,
+            "question": "What of the following features is not part of C#?",
+            "options": [
+                {"number": 1, "answer": "Generics"},
+                {"number": 2, "answer": "Extension methods"},
+                {"number": 3, "answer": "Multiple Inheritance"}
+            ],
+            "answer_number": 3
         }
     ];
+
+    get_random_question() {
+        var min = 0;
+        var max = this.questions.length-1;
+        var i = Math.floor(Math.random() * (max - min + 1)) + min;
+        return this.questions[i];
+    }
 }
