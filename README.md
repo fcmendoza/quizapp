@@ -9,3 +9,5 @@ Web app that reads questions and answers from a JSON file (`quiz_db.json`), disp
 
 Go to http://quizapp.fcmendoza.com/ and try it out!
 
+![app_screenshot_1](quiz_app_1.png)
+![app_screenshot_2](quiz_app_2.png)
